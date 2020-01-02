@@ -3,86 +3,119 @@ head
   title My CV
   meta(charset='utf-8')
   link(href='css/main.css' rel='stylesheet')
-h1
-  | This page will soon hold my CV 
-div= t('bonjour')
+  link(href='css/contactForm.css' rel='stylesheet')
+
 main.maingrid
-  header.topCV
-  section.leftCV
-    h1.name Gwendal Gourmelon
-    address.contact
-      ul
-        li
-          a(href='https://github.com/MyGg29' target='_blank') Github
-        li
-          a(href='https://www.linkedin.com/in/gwendal-gourmelon/' target='_blank') Linkedin
-        li
-          button(onClick='openContactForm()').openContactForm
-            | Open a custom window
-          form(action='/contactMe', method='POST' id='contactForm' ).contactForm
-            label(for='email')
-              | Your mail
-            input(type='email',name='email')
-            label(for='message')
-              | Message
-            textarea(name='message')
-            input(type='submit', value='Submit')
+  a(href='#').logoZone.fadeInLoad GG
+  div.titleZone.fadeInLoad 
+    h1 Formation par l'apprentissage
+  nav.naviZone.fadeInLoad
+    ul.nobullet.nav-items
+      li
+        a(href="/CV").nav-link CV
+      li
+        a(href="#").nav-link Random
+      li
+        a(href="#").nav-link Lorem
+      li
+        a(href="#").nav-link Lorem
+      li
+        a(href="#").nav-link Lorem
 
-    figure.skills
-      svg(height='100')
-    .lang
-      h2 The languages I speak
-      ol
-        li French #[span(class="tooltip") ?]
-        span(class="tooltiptext") langue maternel, Voltaire niveau ingenieur passé
-        li English #[span(class="tooltip") ?]
-        span(class="tooltiptext") fluant, cambridge certificate niveau C2
-        li Spanish #[span(class="tooltip") ?]
-        span(class="tooltiptext") base, 3 mois passé en espagne
+  section.contactZone.fadeInLoad
+    h1.name.uppercase Gwendal Gourmelon
+    address.contactInfo
+      ul.nobullet#contactLinks
+        li
+          img(src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png", 
+            alt="LogoGithub"
+            ).logo
+          a(href='https://github.com/MyGg29' target='_blank').lien Github
+        li
+          img(src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg", 
+            alt="LogoLinkedin"
+            ).logo
+          a(href='https://www.linkedin.com/in/gwendal-gourmelon/' target='_blank').lien Linkedin
+        li
+          img(src="https://image.flaticon.com/icons/svg/25/25236.svg", 
+            alt="LogoMail"
+            ).logo
+          button(onClick='openContactForm()').open-button
+            | Contact
+          #myForm.form-popup
+            form.form-container(action='/action_page.php')
+              h1 Login
+              label(for='email')
+                b Email
+              input(type='text' placeholder='Enter Email' name='email' required='')
+              label(for='psw')
+                b Password
+              input(type='password' placeholder='Enter Password' name='psw' required='')
+              button.btn(type='submit') Login
+              button.btn.cancel(type='submit' onclick='closeForm()') Close
 
-  section.centerCV
-    .formations
-      h1 Mes formations
-      ol
-        li 
-          h2 Ecole d'ingenieur
-          p Blabla
-        li 
-          h2 DUT
-          p Blabla
-        li 
-          h2 Kerich
-          p Bac S spé math
-        li And a lot more ...
-    .experiences
-      h1 Mes experiences
-      ol
-        li 
-          h2 Apprentissage Prodival
-          p 3 ans, à dev une app web sur la qualité
-        li 
-          h2 Stage CGI
-          p 3 mois, dev d'un dashboard en temps réel pour la supervision de centrales d'appels.
 
-    .competences
-      h1 Mes Competences
-      ul
+    //canvas(id="myChart", width="300", height="300")
+
+  section.formationZone.fadeInLoad
+      h1.uppercase Formations
+      ol.nobullet
         li 
-          h2 Apprentissage Prodival
-          p 3 ans, à dev une app web sur la qualité
+          h2 2017 Cycle d'ingénieur en apprentissage
+          p(style='white-space:pre-wrap;')
+            | ISEN Lille
         li 
-          h2 Stage CGI
-          p 3 mois, dev d'un dashboard en temps réel pour la supervision de centrales d'appels.
-  article.rightCV
+          h2 2015-2017 DUT Genie Electrique Informatique Industrielle
+          p(style='white-space:pre-wrap;')
+            | IUT Brest
+        li 
+          h2 2012-2015 Baccalauréat Scientifique
+          p(style='white-space:pre-wrap;')
+            | Lycée Lapérousse Kerichen
+            | Mention Assez-Bien
+  section.experiencesZone.fadeInLoad
+      h1.uppercase Experiences
+      ol.nobullet
+        li 
+          h2 Apprentissage à Prodival
+          p(style='white-space:pre-wrap;')
+            | 3 ans, 2017-2020
+            | Developpements d'un portail de gestion de la Qualité dans l'industrie.
+        li 
+          h2 Stage de fin d'étude - CGI Rennes
+          p(style='white-space:pre-wrap;') 
+            | 3 mois, 2017
+            | Développement d'un dashboard en temps réel pour la supervision de centrales d'appels.
+        li
+          h2 Jobs saisonniers
+          p(style='white-space:pre-wrap;')
+            | Centrale d'appel à B&B; mise en rayon à Lleclerc.
+
+  section.competencesZone.fadeInLoad
+    h1.uppercase Competences
+    h2 Langues
+    ol.nopadding.nobullet
+      li Francais #[span(class="tooltip") ? #[span(class="tooltiptext") Langue maternel, Voltaire niveau ingenieur passé ]]
+      li Anglais #[span(class="tooltip") ? #[span(class="tooltiptext") Fluant, cambridge certificate niveau C2 ]]
+      // li Espagnol #[span(class="tooltip") ? #[span(class="tooltiptext") base, 3 mois passé en espagne]]
+    ul.nobullet
+      li 
+        h2 Gestion de projet
+        p Apprentissage par projet en IUT ainsi qu'à l'ISEN
+      li 
+        h2 Linux
+      li
+        h2 Docker
+      li
+          h2 FPGA & Assembleur
+  article.aboutMeZone.fadeInLoad
     h1 A propos de moi
     .aboutMe
-      | Liste de ce que je fait dans la vie (alias lettre de motivation)
-      | Liste de ce que je fait dans la vie (alias lettre de motivation)
-      | Liste de ce que je fait dans la vie (alias lettre de motivation)
-      | Liste de ce que je fait dans la vie (alias lettre de motivation)
+      | Bonjour ! Je suis Gwendal Gourmelon et bienvenu sur mon CV en ligne !
+      | Je suis passionné par la programmation, je suis competant dans de nombreux domaine.
+      | Je sais réaliser des sites webs complexe (comme ce site le montre) mais j'ai réalisé également d'autres projets personnels sur des applications lourde !
+      | Mon experience personnel ainsi que mes projets personnels ont développé mes competences de gestions de projets et de travail d'équipe
       | Liste de ce que je fait dans la vie (alias lettre de motivation)
 footer
   | By and for Gwendal
-script(src='https://d3js.org/d3.v5.min.js')
 script(type='text/javascript' src='js/main.js')
-

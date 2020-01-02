@@ -1,3 +1,7 @@
 function openContactForm(){
-  document.getElementById("contactForm").classList.toggle('closed');
+  document.getElementById("myForm").style.display = "block";
 }
+function closeContactForm(){
+  document.getElementById("myForm").style.display = "none";
+}
+

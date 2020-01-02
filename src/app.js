@@ -12,22 +12,19 @@ var routes = require("./routes/myroutes.js");
 i18next.use(Backend)
   .use(i18nextMiddleware.LanguageDetector)
   .init({
-  debug: true,
+  debug: false,
   whitelist: ["en", "fr"],
+  fallbackLng: ["fr"],
   preload: ["en", "fr"],
   backend: {
-    loadPath:"./locales/{{lng}}.json"
+    loadPath: __dirname + "/locales/{{lng}}.json"
   }
 });
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine","pug");
+app.use(i18nextMiddleware.handle(i18next));
 app.use(routes);
 app.use(express.static('src/public'));
-/*
-app.get('/', (req, res) => {
-  res.send('Hello world\n');
-});
-*/
 
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);

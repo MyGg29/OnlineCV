@@ -1,36 +1,100 @@
+body{
+  margin:0;
+  font-family:Segoe UI;
+}
+@keyframes fadeIn{
+  from { opacity:0 }
+  to { opacity:1 }
+}
 .maingrid{
   display:grid;
   grid-template-areas:
-    ". a a ."
-    "b c c d"
-    "b c c d";
-  grid-template-columns: 25% 1fr 1fr 50ch;
+    "logo titl titl navi"
+    ". cont cont ."
+    ". form form ."
+    ". abou abou ."
+    ". expe expe ."
+    ". comp comp .";
+  grid-template-columns: 15% minmax(0,1fr) minmax(0,1fr) 15%;
+  grid-gap:15px;
+  text-align:center;
+}
+.fadeInLoad{
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
-.topCV{
-  background-color:red;
-  grid-area:a;
-}
-.leftCV{
-  background-color:blue;
-  grid-area:b;
+.contactZone{
+  background-color:white;
+  grid-area:cont;
   display:flex;
   flex-direction:column;
+  padding:7px;
+  max-width:100%;
+  animation-delay:1s;
 }
-.centerCV{
-  background-color:orange;
-  grid-area:c;
+.formationZone{
+  background-color:white;
+  grid-area:form;
   display:flex;
   flex-direction:column;
+  padding: 7px;
+  max-width:100%;
+  animation-delay:2s;
 }
-.rightCV{
-  background-color:yellow;
-  grid-area:d
+.experiencesZone{
+  background-color:white;
+  grid-area:expe;
+  display:flex;
+  flex-direction:column;
+  padding: 7px;
+  max-width:100%;
+  animation-delay:3s;
+}
+.competencesZone{
+  background-color:white;
+  grid-area:comp;
+  display:flex;
+  flex-direction:column;
+  padding: 7px;
+  max-width:100%;
+  animation-delay:4s;
+}
+#contactLinks > li{
+  float:left;
+  width:80px;
+}
+#contactLinks{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-evenly;
+  width:60%;
+  margin:auto;
+}
+.aboutMeZone{
+  background-color:white;
+  grid-area:abou;
+  padding: 7px;
+  max-width:100%;
+  animation-delay:3s;
+}
+.aboutMe{
+  text-align:justify;
+  padding:10px;
+  width:60ch;
+  margin:auto;
+}
+.nobullet{
+  list-style-type:none;
+  padding:0;
 }
 .contactForm {
   transition:height 2s;
   overflow:hidden;
-  height:200px;
 }
 .closed {
   height:0px;
@@ -38,6 +102,88 @@
 .contactForm > label {
   display:block;
 }
+.maingrid > * h1{
+  border-top: 2px solid blue;
+  border-bottom: 2px solid blue;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-align:center;
+}
+
+.greystrips{
+  text-align:center;
+  padding:0;
+  margin:0;
+  width:100%;
+  background: repeating-linear-gradient(
+    -75deg,
+    white,
+    white 20px,
+    rgba(128,128,128,0.5) 20px,
+    rgba(128,128,128,0.5) 40px
+  );
+}
+
+.naviZone{
+  grid-area:navi;
+  background-color:#4285f4!important;
+  display:flex;
+  flex-direction:column;
+}
+.logoZone {
+  grid-area:logo;
+  background-color:#4285f4!important;
+}
+.titleZone {
+  grid-area:titl;
+  margin:0;
+  background-color:#4285f4!important;
+}
+.titleZone > h1 {
+  border:unset;
+}
+.nav-items {
+  padding-right:0.5rem;
+  padding-left:0.5rem;
+  width:100%;
+  columns:90px 2;
+  -webkit-columns:90px 2;
+  -moz-columns:90px 2;
+}
+.nav-items > li {
+}
+.nav-link {
+  padding-left:0.5rem;
+  padding-right:0.5rem;
+}
+
+.logo{
+  width:40px;
+  height:40px;
+  margin-top:10px;
+}
+
+.lien{
+  display:block;
+}
+
+.boutonLien{
+  display:block;
+  margin:auto;
+}
+
+.uppercase{
+  text-transform:uppercase;
+}
+
+.nopadding{
+  padding:0;
+}
+
+
+
+
+/* Tooltip container */
 .tooltip {
   position: relative;
   display: inline-block;
@@ -48,38 +194,18 @@
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
-  background-color: #555;
+  background-color: black;
   color: #fff;
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
-
-  /* Position the tooltip text */
+ 
+  /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-
-  /* Fade in tooltip */
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-/* Tooltip arrow */
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
   visibility: visible;
-  opacity: 1;
 }
