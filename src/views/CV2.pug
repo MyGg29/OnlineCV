@@ -1,0 +1,31 @@
+doctype html
+head
+  title My CV
+  meta(charset='utf-8')
+  link(href='css/main.css' rel='stylesheet')
+  link(href='css/contactForm.css' rel='stylesheet')
+  link(href='css/verticalTimeline.css' rel='stylesheet')
+  link(href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' rel='stylesheet' crossorigin='anonymous')
+  link(href='assets/fa/css/fontawesome.css' rel='stylesheet')
+  link(href='css/bootstrap-social.css' rel='stylesheet')
+
+main
+  header
+    .container.text-center
+      h1 Me contacter
+  section
+    .contact
+      a.btn.btn-block.btn-social.btn-lg.btn-github
+        i.fab.fa-github.mt-auto.mb-auto
+        | Github
+      a.btn.btn-block.btn-social.btn-lg.btn-linkedin
+        i.fab.fa-linkedin.mt-auto.mb-auto
+        | Linkedin
+      a.btn.btn-block.btn-social.btn-lg.btn-envelop
+        span.fas.fa-envelope.mt-auto.mb-auto
+        | Email
+
+  include partialViews/verticalTimeline.pug
+script(src='https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js' type='text/javascript')
+script(src='js/verticalTimeline.js', type='text/javascript')
+script(defer, src='assets/fa/js/all.js')

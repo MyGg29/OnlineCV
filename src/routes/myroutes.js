@@ -1,22 +1,16 @@
 var express = require("express")
 var router = express.Router()
 
-// middleware that is specific to this router
-router.use(function timeLog (req, res, next) {
-  console.log('Time: ', Date.now())
-  next()
-})
 // define the home page route
 router.get('/', function (req, res) {
-  res.send('Birds home page')
-})
-// define the about route
-router.get('/about', function (req, res) {
-  res.send('About birds')
+  res.render('CV')
 })
 
-router.get('/CV', function (req, res) {
-  res.render('CV')
+router.get('/OK', function (req, res) {
+  res.send('OK')
+})
+router.get('/test', function(req,res){
+  res.render('CV2')
 })
 
 module.exports = router

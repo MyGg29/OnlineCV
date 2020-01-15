@@ -4,25 +4,15 @@ head
   meta(charset='utf-8')
   link(href='css/main.css' rel='stylesheet')
   link(href='css/contactForm.css' rel='stylesheet')
+  link(href='css/verticalTimeline.css' rel='stylesheet')
 
 main.maingrid
-  a(href='#').logoZone.fadeInLoad GG
-  div.titleZone.fadeInLoad 
+  div.logoZone  
+    h2 CV DE GWENDAL GOURMELON
+  div.titleZone 
     h1 Formation par l'apprentissage
-  nav.naviZone.fadeInLoad
-    ul.nobullet.nav-items
-      li
-        a(href="/CV").nav-link CV
-      li
-        a(href="#").nav-link Random
-      li
-        a(href="#").nav-link Lorem
-      li
-        a(href="#").nav-link Lorem
-      li
-        a(href="#").nav-link Lorem
-
-  section.contactZone.fadeInLoad
+  nav.naviZone
+  section.contactZone
     h1.name.uppercase Gwendal Gourmelon
     address.contactInfo
       ul.nobullet#contactLinks
@@ -40,82 +30,80 @@ main.maingrid
           img(src="https://image.flaticon.com/icons/svg/25/25236.svg", 
             alt="LogoMail"
             ).logo
-          button(onClick='openContactForm()').open-button
-            | Contact
-          #myForm.form-popup
-            form.form-container(action='/action_page.php')
-              h1 Login
-              label(for='email')
-                b Email
-              input(type='text' placeholder='Enter Email' name='email' required='')
-              label(for='psw')
-                b Password
-              input(type='password' placeholder='Enter Password' name='psw' required='')
-              button.btn(type='submit') Login
-              button.btn.cancel(type='submit' onclick='closeForm()') Close
-
-
+          a(href='mailto:gwendalgourmelon@gmail.com' target='_blank').lien Mail
     //canvas(id="myChart", width="300", height="300")
-
-  section.formationZone.fadeInLoad
-      h1.uppercase Formations
-      ol.nobullet
-        li 
-          h2 2017 Cycle d'ingénieur en apprentissage
-          p(style='white-space:pre-wrap;')
-            | ISEN Lille
-        li 
-          h2 2015-2017 DUT Genie Electrique Informatique Industrielle
-          p(style='white-space:pre-wrap;')
-            | IUT Brest
-        li 
-          h2 2012-2015 Baccalauréat Scientifique
-          p(style='white-space:pre-wrap;')
-            | Lycée Lapérousse Kerichen
-            | Mention Assez-Bien
-  section.experiencesZone.fadeInLoad
-      h1.uppercase Experiences
-      ol.nobullet
-        li 
-          h2 Apprentissage à Prodival
-          p(style='white-space:pre-wrap;')
-            | 3 ans, 2017-2020
-            | Developpements d'un portail de gestion de la Qualité dans l'industrie.
-        li 
-          h2 Stage de fin d'étude - CGI Rennes
-          p(style='white-space:pre-wrap;') 
-            | 3 mois, 2017
-            | Développement d'un dashboard en temps réel pour la supervision de centrales d'appels.
-        li
-          h2 Jobs saisonniers
-          p(style='white-space:pre-wrap;')
-            | Centrale d'appel à B&B; mise en rayon à Lleclerc.
-
-  section.competencesZone.fadeInLoad
+  section.formationZone
+    h1.uppercase Formations
+    ol.nobullet
+      li 
+        h2 2017-2020 Ingenieur ISEN Lille
+        p(style='white-space:pre-wrap;')
+          | Institut supérieur de l'électronique et numérique Yncréa Hauts-de-France
+      li 
+        h2 2015-2017 DUT Genie Electrique Informatique Industrielle
+        p(style='white-space:pre-wrap;')
+          | IUT Brest
+      li 
+        h2 2012-2015 Baccalauréat Scientifique
+        p(style='white-space:pre-wrap;')
+          | Lycée Lapérousse Kerichen
+          | Mention Assez-Bien
+  section.experiencesZone
+    h1.uppercase Experiences
+    ol.nobullet
+      li 
+        h2 Apprentissage entreprise #[a(href="http://prodival.com") Prodival Nord]
+        p(style='white-space:pre-wrap;')
+          | Septembre 2017 - Août 2020
+          | Developpements d'un portail de gestion de la Qualité dans l'industrie.
+      li 
+        h2 Stage de fin d'étude - CGI Rennes
+        p(style='white-space:pre-wrap;') 
+          | 3 mois, 2017
+          | Développement d'un dashboard en temps réel orienté Big Data pour la supervision de centrales d'appels avec Kafka, Meteor et React
+      li
+        h2 Projets
+        p(style='white-space:pre-wrap;')
+          ul
+            li Site de gestion de la communication à l'ISEN en NodeJS/MongoDB
+            li API Générique pour model MongoDB en NodeJS/Express
+            li Gamepad Supermarios Bros sur ESP32 Bluetooth BLE en C++/Python
+            li Site Stellar'ISEN de vulgarisation scientifique en PHP/MySql
+            li Client et Serveur IRC en Java
+            li Rubik's Cube avec résoluation automatique en C/OpenGL 
+            li Scrapper de planning en Python
+  section.competencesZone
     h1.uppercase Competences
     h2 Langues
     ol.nopadding.nobullet
-      li Francais #[span(class="tooltip") ? #[span(class="tooltiptext") Langue maternel, Voltaire niveau ingenieur passé ]]
-      li Anglais #[span(class="tooltip") ? #[span(class="tooltiptext") Fluant, cambridge certificate niveau C2 ]]
-      // li Espagnol #[span(class="tooltip") ? #[span(class="tooltiptext") base, 3 mois passé en espagne]]
+      li Francais
+      li Anglais, Certificat Cambridge niveau C1
     ul.nobullet
       li 
-        h2 Gestion de projet
         p Apprentissage par projet en IUT ainsi qu'à l'ISEN
       li 
         h2 Linux
       li
         h2 Docker
       li
-          h2 FPGA & Assembleur
-  article.aboutMeZone.fadeInLoad
+        h2 Web
+        p MVC, Web Asynchrone, NodeJS
+      li 
+        h2 Base de données 
+        p SQL : SQL Server, MySQL 
+        p No SQL : MongoDB, Redis
+      li 
+        h2 Méthode Agile
+        p Initiations au SCRUM grâce au projet de gestion de la communication à l'ISEN
+        p Outils et méthodes de gestions de Projets (IceScrum, Trello)
+
+  article.aboutMeZone
     h1 A propos de moi
     .aboutMe
-      | Bonjour ! Je suis Gwendal Gourmelon et bienvenu sur mon CV en ligne !
-      | Je suis passionné par la programmation, je suis competant dans de nombreux domaine.
-      | Je sais réaliser des sites webs complexe (comme ce site le montre) mais j'ai réalisé également d'autres projets personnels sur des applications lourde !
-      | Mon experience personnel ainsi que mes projets personnels ont développé mes competences de gestions de projets et de travail d'équipe
-      | Liste de ce que je fait dans la vie (alias lettre de motivation)
+      p Bonjour ! Je suis Gwendal Gourmelon et bienvenu sur mon CV en ligne !
+      p Je suis passionné par la programmation, je suis competant dans de nombreux domaine.
+      p Je sais réaliser des sites webs complexe (comme ce site le montre) mais j'ai réalisé également d'autres projets personnels sur des applications lourde !
+      p Mon experience personnel ainsi que mes projets personnels ont développé mes competences de gestions de projets et de travail d'équipe
 footer
   | By and for Gwendal
 script(type='text/javascript' src='js/main.js')
