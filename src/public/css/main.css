@@ -210,9 +210,11 @@ body{
   visibility: visible;
 }
 
-
-
-
 .contact{
   columns:3
+}
+@media screen and (max-width: 768px) {
+  .contact{
+    columns:1;
+  }
 }
